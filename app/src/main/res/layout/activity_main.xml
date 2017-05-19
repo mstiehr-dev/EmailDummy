@@ -6,21 +6,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#444CFE"
         tools:context="dev.mstiehr.de.emaildummy.MainActivity">
 
-    <TextView
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@android:id/list"
+    />
+    <ImageView
+            android:id="@android:id/empty"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="subject"
-            android:id="@+id/tv_subject"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-            android:text="content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_content"/>
+            android:layout_height="match_parent"
+            android:src="@mipmap/web_hi_res_512"
+            android:layout_gravity="center"
+    />
 
 </LinearLayout>
