@@ -1,10 +1,13 @@
 package dev.mstiehr.de.emaildummy;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import dev.mstiehr.de.emaildummy.data.Message;
+
+import java.io.File;
 
 public class EmailActivity extends AppCompatActivity
 {
@@ -22,7 +25,7 @@ public class EmailActivity extends AppCompatActivity
         if(null!=getIntent())
         {
             mMessage = createMessageFromIntent(getIntent());
-            db.messageDao().insertAll(mMessage);
+//            db.messageDao().insertAll(mMessage);
 
             showMessage(mMessage);
         }
@@ -41,6 +44,13 @@ public class EmailActivity extends AppCompatActivity
         tMessage.setTimestamp(System.currentTimeMillis());
         tMessage.setSubject(intent.getStringExtra(android.content.Intent.EXTRA_SUBJECT));
         tMessage.setContent(intent.getStringExtra(android.content.Intent.EXTRA_TEXT));
+        Uri logUri = intent.getData();
+//        Uri logUri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+        if(null!=logUri)
+        {
+            File f = new File(logUri.toString());
+            // TODO: 15.06.2017 handle attachment  
+        }
 
         return tMessage;
     }

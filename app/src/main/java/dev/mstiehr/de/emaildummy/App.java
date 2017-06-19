@@ -14,7 +14,7 @@ public class App extends Application
     {
         super.onCreate();
 
-        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "db-messages").build();
+//        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "db-messages").build();
     }
 
     public static AppDatabase getDb (Context context)
